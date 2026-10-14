@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToS & Gizlilik Risk Raporu</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Sahne Başlık Banner'ı (Demo / Cypress için üst bilgi çubuğu) */
+    .scene-banner {
+      display: none;
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+      text-align: center;
+      background: #1e293b;
+      color: #f8fafc;
+      border-bottom: 3px solid #3b82f6;
+      flex-shrink: 0;
+      transition: all 0.25s ease;
+    }
+    .scene-banner.active {
+      display: block;
+    }
+    .scene-banner.status-done {
+      background: #14532d;
+      color: #dcfce7;
+      border-bottom-color: #22c55e;
+    }
+
+    /* İki Sütunlu Ana Kabuk */
+    .layout-wrapper {
+      display: flex;
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    /* Sol Sütun: Web Sayfası (Fixture) Görünümü */
+    .fixture-preview-pane {
+      display: none;
+      flex: 1.35;
+      border-right: 2px solid #cbd5e1;
+      background: #ffffff;
+      height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .fixture-preview-pane.active {
+      display: flex;
+    }
+    .browser-bar {
+      background: #f1f5f9;
+      border-bottom: 1px solid #cbd5e1;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      color: #334155;
+      flex-shrink: 0;
+    }
+    .browser-dots {
+      display: flex;
+      gap: 5px;
+    }
+    .browser-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-r { background: #ef4444; }
+    .dot-y { background: #f59e0b; }
+    .dot-g { background: #22c55e; }
+    .browser-url {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 4px 10px;
+      flex: 1;
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: #0f172a;
+    }
+    .fixture-doc-content {
+      flex: 1;
+      padding: 24px 28px;
+      overflow-y: auto;
+      line-height: 1.65;
+      color: #1e293b;
+      font-size: 0.94rem;
+    }
+    .fixture-doc-content h1 {
+      font-size: 1.35rem;
+      color: #0f172a;
+      border-bottom: 2px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-top: 0;
+    }
+    .fixture-doc-content .clause-block,
+    .fixture-doc-content p {
+      margin-bottom: 14px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #f8fafc;
+      border: 1px solid #f1f5f9;
+    }
+    .fixture-doc-content details {
+      margin-top: 14px;
+      padding: 10px 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+    .fixture-doc-content summary {
+      font-weight: 700;
+      cursor: pointer;
+      color: #1d4ed8;
+    }
+    .fixture-doc-content footer {
+      margin-top: 24px;
+      padding-top: 12px;
+      border-top: 1px solid #cbd5e1;
+      font-size: 0.85rem;
+    }
+
+    /* Vurgulanan Alıntı Stilleri */
+    mark.tos-risk-highlight {
+      background-color: #fef08a !important;
+      color: #713f12 !important;
+      padding: 2px 4px !important;
+      border-radius: 4px !important;
+      border-bottom: 2px solid #eab308 !important;
+      transition: all 0.25s ease !important;
+    }
+    mark.tos-risk-highlight[data-severity="critical"],
+    mark.tos-risk-highlight[data-severity="high"] {
+      background-color: #fecaca !important;
+      color: #7f1d1d !important;
+      border-bottom-color: #ef4444 !important;
+    }
+    mark.tos-risk-highlight.tos-risk-highlight-active {
+      outline: 3px solid #dc2626 !important;
+      box-shadow: 0 0 0 6px rgba(220, 38, 38, 0.28) !important;
+      background-color: #fca5a5 !important;
+    }
+
+    /* Sağ Sütun: Chrome Uzantısı Side Panel */
+    .panel-container {
+      flex: 1;
+      max-width: 460px;
+      min-width: 360px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background: var(--bg);
+    }
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-bar h1 {
+      font-size: 1rem;
+      margin: 0;
+      color: var(--text);
+    }
+    .btn-row {
+      display: flex;
+      gap: 8px;
+    }
+    button {
+      border: none;
+      border-radius: 7px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #fff;
+      flex: 1;
+    }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #1e293b;
+    }
+    .btn-secondary:hover { background: #cbd5e1; }
+    .btn-ghost {
+      background: #f1f5f9;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+      padding: 4px 10px;
+      font-size: 0.76rem;
+    }
+    .btn-ghost:hover { background: #e2e8f0; }
+
+    /* 1. Üst Skor ve Özet Kartı */
+    .score-hero-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .score-top-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .score-big-number {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--text);
+    }
+    .score-big-number span.out-of {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .level-badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+    .level-dusuk { background: #dcfce7; color: #166534; }
+    .level-orta { background: #fef9c3; color: #854d0e; }
+    .level-yuksek { background: #fee2e2; color: #991b1b; }
+
+    .summary-text {
+      margin: 0;
+      font-size: 0.82rem;
+      color: #334155;
+      line-height: 1.42;
+    }
+
+    /* 6. Belirsizlik ("Emin değilim") Sarı Banner */
+    .uncertain-banner {
+      background: #fef9c3;
+      border: 2px solid #eab308;
+      color: #713f12;
+      border-radius: 10px;
+      padding: 12px 14px;
+    }
+    .uncertain-banner strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: #854d0e;
+    }
+    .uncertain-reason-line {
+      margin: 0;
+      font-size: 0.82rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* 2 & 3. Kompakt Bulgu Kartları ve Gizli Alıntı Çekmecesi */
+    .findings-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .finding-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 11px;
+    }
+    .finding-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 3px;
+    }
+    .category-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .sev-badge {
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 0.69rem;
+      font-weight: 700;
+    }
+    .sev-critical, .sev-high { background: #fee2e2; color: #991b1b; }
+    .sev-medium { background: #fef9c3; color: #854d0e; }
+    .sev-low { background: #dcfce7; color: #166534; }
+
+    .finding-short-explanation {
+      margin: 0 0 6px 0;
+      font-size: 0.8rem;
+      color: #334155;
+      line-height: 1.38;
+    }
+    .quote-drawer {
+      margin-top: 7px;
+      padding-top: 7px;
+      border-top: 1px dashed var(--border);
+    }
+    .quote-drawer[hidden] {
+      display: none !important;
+    }
+    .quote-text {
+      font-size: 0.76rem;
+      color: #475569;
+      font-style: italic;
+      background: #f8fafc;
+      padding: 5px 8px;
+      border-left: 2px solid #94a3b8;
+      margin: 0 0 6px 0;
+    }
+
+    /* 4. Kalan Bulgular Katlanır Liste ("Diğer N madde") */
+    details.other-findings-collapse {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 10px;
+      margin-top: 6px;
+    }
+    details.other-findings-collapse > summary {
+      font-size: 0.79rem;
+      font-weight: 600;
+      color: #334155;
+      cursor: pointer;
+    }
+    details.other-findings-collapse[open] > summary {
+      margin-bottom: 7px;
+    }
+
+    /* 5. En Alt Küçük, Sönük Meta ve Gizlenemez Sabit Hukuki İfade */
+    footer.mandatory-footer {
+      margin-top: auto;
+      border-top: 1px solid var(--border);
+      padding: 8px 2px 4px 2px;
+      font-size: 0.71rem;
+      color: var(--muted);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+    .footer-meta-line {
+      color: #94a3b8;
+      font-size: 0.7rem;
+    }
+    .footer-injection-line {
+      color: #b91c1c;
+      font-size: 0.71rem;
+      font-weight: 600;
+    }
+    .footer-disclaimer-line {
+      color: #475569;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <!-- Üst Sahne Başlığı (Demo videolarında hangi senaryoda olunduğunu gösterir) -->
+  <div class="scene-banner" id="scene-banner" data-testid="scene-banner"></div>
+
+  <div class="layout-wrapper">
+    <!-- Sol Sütun: İncelenen Web Sayfası (Fixture) -->
+    <div class="fixture-preview-pane" id="fixture-preview-pane" data-testid="fixture-preview-pane">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <span class="dot-r"></span>
+          <span class="dot-y"></span>
+          <span class="dot-g"></span>
+        </div>
+        <div class="browser-url" id="fixture-url-bar">http://localhost:4173</div>
+      </div>
+      <div class="fixture-doc-content" id="fixture-doc-content" data-testid="fixture-doc-content"></div>
+    </div>
+
+    <!-- Sağ Sütun: Uzantı Side Panel Raporu -->
+    <div class="panel-container" data-testid="sidepanel-container">
+      <div class="header-bar">
+        <h1>ToS Risk Raporu</h1>
+        <button class="btn-secondary" id="open-options-btn" type="button">Ayarlar</button>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn-primary" id="analyze-btn" type="button">Sayfayı Analiz Et</button>
+        <button class="btn-secondary" id="page-agent-btn" type="button">Akordeon Aç</button>
+      </div>
+
+      <div id="agent-prep-status" style="display:none; font-size:0.75rem; color:#475569;"></div>
+
+      <div id="report-root">
+        <div class="score-hero-card" id="idle-state">
+          <p class="summary-text">Analiz için <strong>"Sayfayı Analiz Et"</strong> düğmesine tıklayın.</p>
+        </div>
+      </div>
+
+      <!-- 5. En altta küçük, sönük yazıyla: atılan bulgu sayısı, varsa prompt injection uyarısı ve sabit hukuki ifade -->
+      <footer class="mandatory-footer" id="bottom-footer">
+        <div id="footer-meta-container"></div>
+        <div class="footer-disclaimer-line" id="bottom-legal-disclaimer">
+          Bu uygulama hukuki tavsiye vermez. Yalnızca bilgilendirme amaçlıdır.
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script type="module" src="./sidepanel.ts"></script>
+</body>
+</html>

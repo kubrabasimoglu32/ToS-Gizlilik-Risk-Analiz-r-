@@ -1,0 +1,25 @@
+Spotify Terms of Use (Public Clauses Excerpt)
+
+1. Introduction and Service Description
+By signing up for, or otherwise using, the Spotify service, websites, and software applications, you are entering into a binding contract with Spotify AB. Your agreement with us includes these Terms and any additional terms that you agree to, other than terms with any third parties.
+
+2. Paid Subscriptions, Automatic Renewal, and Cancellation
+If you have purchased a Paid Subscription directly from Spotify, your payment to Spotify will automatically renew at the end of the applicable subscription period, unless you cancel your Paid Subscription before the end of the then-current subscription period. The cancellation will take effect the day after the last day of the current subscription period, and you will be downgraded to the free version of the Spotify Service. We do not provide refunds or credits for any partial subscription periods, except as expressly stated in these Terms.
+
+3. Price and Tax Changes
+Spotify may from time to time make changes to Paid Subscriptions, including recurring subscription fees, the Pre-Paid Period (for periods not yet paid), or Codes, and will communicate any price changes to you in advance. If you do not agree to a price change, you can reject the change by unsubscribing from the applicable Paid Subscription prior to the price change going into effect.
+
+4. User Content and License Grant
+You retain ownership of your User Content when you post it to the Service. However, to make your User Content available on the Spotify Service, you grant Spotify a non-exclusive, transferable, sub-licensable, royalty-free, fully paid, irrevocable, worldwide license to reproduce, make available, perform and display, translate, modify, create derivative works from, distribute, and otherwise use any such User Content through any medium, whether alone or in combination with other Content or materials, in any manner and by any means, method or technology, whether now known or hereafter created, in connection with the Spotify Service.
+
+5. Changes to the Agreements
+Occasionally we may make changes to the Agreements for valid reasons, such as improving the existing functions or features or adding new functions or features to the Service, implementing advancements in science and technology, and ensuring the operability or the security of the Service. We Reserve the unilateral right to modify these terms without prior individual notice for minor operational adjustments.
+
+6. Term and Account Termination
+The Agreements will continue to apply to you until terminated by either you or Spotify. Spotify may terminate these Agreements or suspend your access to the Spotify Service at any time at our sole discretion without cause or prior notice if we believe you have breached any of these Terms, if we stop providing the Spotify Service or any material component thereof, or as we believe necessary to comply with applicable law.
+
+7. Limitation of Liability
+You agree that your sole and exclusive remedy for any problems or dissatisfaction with the Spotify Service is to uninstall any Spotify software and to stop using the Spotify Service. In no event will Spotify, its officers, shareholders, employees, agents, directors, subsidiaries, affiliates, successors, assigns, suppliers, or licensors be liable for any indirect, special, incidental, punitive, exemplary, or consequential damages arising out of the use or inability to use the Service.
+
+8. Dispute Resolution, Class Action Waiver, and Mandatory Arbitration
+YOU AND SPOTIFY AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONLY IN YOUR OR ITS INDIVIDUAL CAPACITY AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE ACTION. Any dispute, claim, or controversy between you and Spotify arising in connection with or relating in any way to these Agreements shall be determined by mandatory binding arbitration. You waive your right to a trial by jury or to participate in a class action in court.

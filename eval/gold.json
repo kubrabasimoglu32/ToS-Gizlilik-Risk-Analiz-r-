@@ -1,0 +1,493 @@
+{
+  "schema_version": "1.0",
+  "created_without_llm_output": true,
+  "user_verification_status": "PENDING_USER_CONFIRMATION",
+  "note_tr": "Bu şablon LLM çıktısına BAKILMADAN, doğrudan metinlerin segmentasyonu (clause_id + offset) ve insan incelemesiyle oluşturulmuştur. Kullanıcı doğrulamasına hazırdır.",
+  "documents": [
+    {
+      "document_id": "01-spotify-terms",
+      "filename": "01-spotify-terms.txt",
+      "user_verified": false,
+      "instructions_tr": "Aşağıdaki clauses_catalog listesinden madde kimliklerini (C1..CN) inceleyip gold_labels dizisini doğrulayın veya düzenleyin, ardından user_verified alanını true yapın.",
+      "clauses_catalog": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 370,
+          "preview": "Spotify Terms of Use (Public Clauses Excerpt)\n\n1. Introduction and Service Description\nBy signing up for, or otherwise using, the Spotify se..."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 372,
+          "end_offset": 977,
+          "preview": "2. Paid Subscriptions, Automatic Renewal, and Cancellation\nIf you have purchased a Paid Subscription directly from Spotify, your payment to ..."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 979,
+          "end_offset": 1389,
+          "preview": "3. Price and Tax Changes\nSpotify may from time to time make changes to Paid Subscriptions, including recurring subscription fees, the Pre-Pa..."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1391,
+          "end_offset": 2061,
+          "preview": "4. User Content and License Grant\nYou retain ownership of your User Content when you post it to the Service. However, to make your User Cont..."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 2063,
+          "end_offset": 2501,
+          "preview": "5. Changes to the Agreements\nOccasionally we may make changes to the Agreements for valid reasons, such as improving the existing functions ..."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 2503,
+          "end_offset": 2958,
+          "preview": "6. Term and Account Termination\nThe Agreements will continue to apply to you until terminated by either you or Spotify. Spotify may terminat..."
+        },
+        {
+          "clause_id": "C7",
+          "start_offset": 2960,
+          "end_offset": 3475,
+          "preview": "7. Limitation of Liability\nYou agree that your sole and exclusive remedy for any problems or dissatisfaction with the Spotify Service is to ..."
+        },
+        {
+          "clause_id": "C8",
+          "start_offset": 3477,
+          "end_offset": 4010,
+          "preview": "8. Dispute Resolution, Class Action Waiver, and Mandatory Arbitration\nYOU AND SPOTIFY AGREE THAT EACH MAY BRING CLAIMS AGAINST THE OTHER ONL..."
+        }
+      ],
+      "gold_labels": [
+        {
+          "clause_id": "C2",
+          "start_offset": 372,
+          "end_offset": 977,
+          "category": "otomatik_yenileme_iptal",
+          "human_note_tr": "Abonelik dönem sonunda otomatik yenilenir."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 372,
+          "end_offset": 977,
+          "category": "ucret_iade",
+          "human_note_tr": "Kısmi abonelik dönemleri için iade veya kredi verilmez."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 979,
+          "end_offset": 1389,
+          "category": "ucret_iade",
+          "human_note_tr": "Spotify abonelik ücretlerini zaman zaman değiştirebilir (önceden bildirimli olduğu için model kaçırabilir - FN adayı)."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1391,
+          "end_offset": 2061,
+          "category": "icerik_lisansi",
+          "human_note_tr": "Kullanıcı içeriği üzerinde geri alınamaz, dünya çapında, alt lisanslanabilir geniş lisans."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 2063,
+          "end_offset": 2501,
+          "category": "tek_tarafli_degisiklik",
+          "human_note_tr": "Bireysel bildirim olmaksızın koşulları tek taraflı değiştirme hakkı."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 2503,
+          "end_offset": 2958,
+          "category": "hesap_kapatma",
+          "human_note_tr": "Spotify tamamen kendi takdirine bağlı olarak bildirim yapmadan hesabı kapatabilir."
+        },
+        {
+          "clause_id": "C7",
+          "start_offset": 2960,
+          "end_offset": 3475,
+          "category": "sorumluluk_siniri",
+          "human_note_tr": "Dolaylı, özel veya cezai hiçbir zarardan sorumlu tutulamama."
+        },
+        {
+          "clause_id": "C8",
+          "start_offset": 3477,
+          "end_offset": 4010,
+          "category": "zorunlu_tahkim_dava_feragati",
+          "human_note_tr": "Zorunlu tahkim ve toplu dava (class action) feragati."
+        }
+      ]
+    },
+    {
+      "document_id": "02-netflix-terms",
+      "filename": "02-netflix-terms.txt",
+      "user_verified": false,
+      "instructions_tr": "Aşağıdaki clauses_catalog listesinden madde kimliklerini (C1..CN) inceleyip gold_labels dizisini doğrulayın veya düzenleyin, ardından user_verified alanını true yapın.",
+      "clauses_catalog": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 474,
+          "preview": "Netflix Terms of Use (Public Clauses Excerpt)\n\n1. Membership and Continuous Subscription\nYour Netflix membership will continue and automatic..."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 476,
+          "end_offset": 853,
+          "preview": "2. Billing, Cancellation, and No Refunds Policy\nYou can cancel your Netflix membership at any time, and you will continue to have access to ..."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 855,
+          "end_offset": 1127,
+          "preview": "3. Changes to the Price and Subscription Plans\nWe may change our subscription plans and the price of our service from time to time. We reser..."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1129,
+          "end_offset": 1509,
+          "preview": "4. Passwords and Account Access Termination\nThe member who created the Netflix account and whose Payment Method is charged is responsible fo..."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1511,
+          "end_offset": 1920,
+          "preview": "5. Warranties and Limitation of Liability\nThe Netflix service and all content and software associated therewith, or any other features or fu..."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 1922,
+          "end_offset": 2359,
+          "preview": "6. Governing Law and Arbitration Agreement\nYou and Netflix agree that any dispute, claim or controversy arising out of or relating in any wa..."
+        }
+      ],
+      "gold_labels": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 474,
+          "category": "otomatik_yenileme_iptal",
+          "human_note_tr": "Üyelik iptal edilene kadar her ay otomatik yenilenir."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 476,
+          "end_offset": 853,
+          "category": "ucret_iade",
+          "human_note_tr": "Ödemeler iade edilemez (non-refundable)."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 855,
+          "end_offset": 1127,
+          "category": "tek_tarafli_degisiklik",
+          "human_note_tr": "Hizmet özelliklerini ve içerik kütüphanesini bildirim yapmadan tek taraflı değiştirme."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1129,
+          "end_offset": 1509,
+          "category": "hesap_kapatma",
+          "human_note_tr": "Hesabı sebep göstermeksizin her an sonlandırma."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1511,
+          "end_offset": 1920,
+          "category": "sorumluluk_siniri",
+          "human_note_tr": "Hizmet \"olduğu gibi\" sunulur, veri kaybı ve dolaylı zararlardan sorumluluk kabul edilmez."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 1922,
+          "end_offset": 2359,
+          "category": "zorunlu_tahkim_dava_feragati",
+          "human_note_tr": "Bağlayıcı tahkim ve jüri/toplu dava hakkından feragat."
+        }
+      ]
+    },
+    {
+      "document_id": "03-dropbox-terms",
+      "filename": "03-dropbox-terms.txt",
+      "user_verified": false,
+      "instructions_tr": "Aşağıdaki clauses_catalog listesinden madde kimliklerini (C1..CN) inceleyip gold_labels dizisini doğrulayın veya düzenleyin, ardından user_verified alanını true yapın.",
+      "clauses_catalog": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 348,
+          "preview": "Dropbox Terms of Service and Privacy Policy Excerpt\n\n1. Your Stuff and Permissions\nWhen you use our Services, you provide us with things lik..."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 350,
+          "end_offset": 735,
+          "preview": "2. Paid Accounts and Auto-Renewal\nIf you purchase a Paid Account, we'll automatically bill you from the date you convert to a Paid Account a..."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 737,
+          "end_offset": 1109,
+          "preview": "3. Data Sharing with Third-Party Partners\nTo provide, analyze, and market our Services, we may share your personal data and usage telemetry ..."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1111,
+          "end_offset": 1467,
+          "preview": "4. Account Suspension and Termination\nYou're free to stop using our Services at any time. We reserve the right to suspend or terminate your ..."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1469,
+          "end_offset": 1840,
+          "preview": "5. Disclaimers and Limitation of Liability\nWE TRY TO KEEP THE SERVICES UP AND RUNNING, BUG-FREE, AND SAFE, BUT YOU USE THEM AT YOUR OWN RISK..."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 1842,
+          "end_offset": 2272,
+          "preview": "6. Mandatory Arbitration and Class Action Waiver\nYou and Dropbox agree to resolve any claims relating to these Terms or the Services through..."
+        }
+      ],
+      "gold_labels": [
+        {
+          "clause_id": "C2",
+          "start_offset": 350,
+          "end_offset": 735,
+          "category": "otomatik_yenileme_iptal",
+          "human_note_tr": "Ücretli hesaplar her dönem sonunda otomatik yenilenir."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 350,
+          "end_offset": 735,
+          "category": "ucret_iade",
+          "human_note_tr": "Ödenen ücretler yasa gerektirmedikçe iade edilmez."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 737,
+          "end_offset": 1109,
+          "category": "veri_paylasimi_satisi",
+          "human_note_tr": "Verilerin üçüncü taraf reklamcılarla paylaşılması ve veri simsarlarına (data brokers) satılması."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1111,
+          "end_offset": 1467,
+          "category": "hesap_kapatma",
+          "human_note_tr": "Önceden bildirim yapmaksızın erişimi askıya alma veya sonlandırma (dosyaların silinmesi riski)."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1469,
+          "end_offset": 1840,
+          "category": "sorumluluk_siniri",
+          "human_note_tr": "Geniş sorumluluk sınırlandırması."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 1842,
+          "end_offset": 2272,
+          "category": "zorunlu_tahkim_dava_feragati",
+          "human_note_tr": "Zorunlu tahkim ve toplu dava feragati."
+        }
+      ]
+    },
+    {
+      "document_id": "04-instagram-terms",
+      "filename": "04-instagram-terms.txt",
+      "user_verified": false,
+      "instructions_tr": "Aşağıdaki clauses_catalog listesinden madde kimliklerini (C1..CN) inceleyip gold_labels dizisini doğrulayın veya düzenleyin, ardından user_verified alanını true yapın.",
+      "clauses_catalog": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 511,
+          "preview": "Instagram (Meta) Terms of Use and Privacy Policy Excerpt\n\n1. The Instagram Service and Personalized Ads\nWe agree to provide you with the Ins..."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 513,
+          "end_offset": 998,
+          "preview": "2. Broad License to User Content\nWe do not claim ownership of your content, but you grant us a license to use it. Specifically, when you sha..."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 1000,
+          "end_offset": 1359,
+          "preview": "3. Unilateral Modification of Terms\nWe may change our Service and policies, and we may need to make changes to these Terms so that they accu..."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1361,
+          "end_offset": 1672,
+          "preview": "4. Account Removal and Content Deletion\nWe can remove any content or information you share on the Service if we believe that it violates the..."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1674,
+          "end_offset": 2081,
+          "preview": "5. Liability Limits\nOur Service is provided \"as is,\" and we can't guarantee it will be safe and secure or will work perfectly all the time. ..."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 2083,
+          "end_offset": 2420,
+          "preview": "6. Dispute Resolution and Binding Arbitration\nIf you are a consumer, the laws of the country in which you reside will apply to any claim, ca..."
+        }
+      ],
+      "gold_labels": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 511,
+          "category": "veri_paylasimi_satisi",
+          "human_note_tr": "Kişisel verilerin ve platform dışı gezinme geçmişinin üçüncü taraf reklamcılarla paylaşılması."
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 513,
+          "end_offset": 998,
+          "category": "icerik_lisansi",
+          "human_note_tr": "Kullanıcı içeriği üzerinde süresiz, geri alınamaz, dünya çapında, alt lisanslanabilir lisans."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 1000,
+          "end_offset": 1359,
+          "category": "tek_tarafli_degisiklik",
+          "human_note_tr": "Önceden bildirim yapmaksızın koşulları değiştirme takdir yetkisi."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 1361,
+          "end_offset": 1672,
+          "category": "hesap_kapatma",
+          "human_note_tr": "Sebep veya ön uyarı olmaksızın hesabı kapatma."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1674,
+          "end_offset": 2081,
+          "category": "sorumluluk_siniri",
+          "human_note_tr": "Kar, veri kaybı veya dolaylı zararlardan sorumluluk kabul edilmemesi."
+        }
+      ]
+    },
+    {
+      "document_id": "05-tr-eticaret-sozlesme",
+      "filename": "05-tr-eticaret-sozlesme.txt",
+      "user_verified": false,
+      "instructions_tr": "Aşağıdaki clauses_catalog listesinden madde kimliklerini (C1..CN) inceleyip gold_labels dizisini doğrulayın veya düzenleyin, ardından user_verified alanını true yapın.",
+      "clauses_catalog": [
+        {
+          "clause_id": "C1",
+          "start_offset": 0,
+          "end_offset": 83,
+          "preview": "AnadoluPazar E-Ticaret ve Premium Üyelik Kullanım Koşulları (Türk E-Ticaret Sitesi)"
+        },
+        {
+          "clause_id": "C2",
+          "start_offset": 85,
+          "end_offset": 395,
+          "preview": "1. Taraflar ve Hizmetin Konusu\nİşbu Kullanım Koşulları ve Premium Üyelik Sözleşmesi (\"Sözleşme\"), AnadoluPazar Elektronik Ticaret A.Ş. (\"Şir..."
+        },
+        {
+          "clause_id": "C3",
+          "start_offset": 397,
+          "end_offset": 857,
+          "preview": "2. Premium Abonelik ve Otomatik Yenileme Şartları\nAnadoluPazar Premium üyeliği, ücretsiz deneme süresinin bitiminde veya her fatura dönemini..."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 859,
+          "end_offset": 1193,
+          "preview": "3. Tek Taraflı Değişiklik ve Ücret Güncellemesi\nŞirketimiz, işbu Kullanım Koşulları hükümlerini, komisyon oranlarını ve abonelik ücretlerini..."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1195,
+          "end_offset": 1546,
+          "preview": "4. Kişisel Verilerin İşlenmesi, Paylaşımı ve Satışı\nÜye, platformu kullanarak ad-soyad, telefon, açık adres, alışveriş alışkanlıkları ve anl..."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 1548,
+          "end_offset": 1828,
+          "preview": "5. Kullanıcı Yorumları ve Fikri Mülkiyet Lisansı\nÜye tarafından ürün sayfalarına yazılan tüm değerlendirmeler, yüklenen fotoğraf ve videolar..."
+        },
+        {
+          "clause_id": "C7",
+          "start_offset": 1830,
+          "end_offset": 2182,
+          "preview": "6. Hesap Askıya Alma, Fesih ve Sorumluluk Sınırı\nŞirketimiz, herhangi bir gerekçe göstermeksizin kullanıcı hesabını bildirim yapmadan kapata..."
+        },
+        {
+          "clause_id": "C8",
+          "start_offset": 2184,
+          "end_offset": 2488,
+          "preview": "7. Uyuşmazlıkların Çözümü, Zorunlu Tahkim ve Dava Feragati\nİşbu sözleşmeden doğacak her türlü uyuşmazlık yalnızca Şirket tarafından seçilece..."
+        }
+      ],
+      "gold_labels": [
+        {
+          "clause_id": "C3",
+          "start_offset": 397,
+          "end_offset": 857,
+          "category": "otomatik_yenileme_iptal",
+          "human_note_tr": "Otomatik yenileme ve yalnızca noter aracılığıyla ıslak imzalı dilekçe ile iptal zorluğu."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 859,
+          "end_offset": 1193,
+          "category": "tek_tarafli_degisiklik",
+          "human_note_tr": "Koşulları ve ücretleri bildirimde bulunmaksızın tek taraflı değiştirme hakkı."
+        },
+        {
+          "clause_id": "C4",
+          "start_offset": 859,
+          "end_offset": 1193,
+          "category": "ucret_iade",
+          "human_note_tr": "Tahsil edilen bedeller hiçbir koşulda iade edilmez."
+        },
+        {
+          "clause_id": "C5",
+          "start_offset": 1195,
+          "end_offset": 1546,
+          "category": "veri_paylasimi_satisi",
+          "human_note_tr": "Kişisel verilerin ve konumun reklam ağları ve veri simsarlarına satılması."
+        },
+        {
+          "clause_id": "C6",
+          "start_offset": 1548,
+          "end_offset": 1828,
+          "category": "icerik_lisansi",
+          "human_note_tr": "Yorum ve görseller üzerinde süresiz, bedelsiz, geri alınamaz tam ticari kullanım hakkı."
+        },
+        {
+          "clause_id": "C7",
+          "start_offset": 1830,
+          "end_offset": 2182,
+          "category": "hesap_kapatma",
+          "human_note_tr": "Gerekçe göstermeksizin ve bildirim yapmadan hesabı kapatma ve puanları sıfırlama."
+        },
+        {
+          "clause_id": "C7",
+          "start_offset": 1830,
+          "end_offset": 2182,
+          "category": "sorumluluk_siniri",
+          "human_note_tr": "Veri sızıntısı ve ayıplı ürün dahil hiçbir zarardan sorumlu tutulamama."
+        },
+        {
+          "clause_id": "C8",
+          "start_offset": 2184,
+          "end_offset": 2488,
+          "category": "zorunlu_tahkim_dava_feragati",
+          "human_note_tr": "Özel tahkim şartı ve Tüketici Hakem Heyeti / mahkeme / toplu dava hakkından feragat."
+        }
+      ]
+    }
+  ]
+}

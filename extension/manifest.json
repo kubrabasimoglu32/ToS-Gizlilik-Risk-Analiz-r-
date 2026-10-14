@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "ToS & Gizlilik Risk Analizörü",
+  "version": "1.0.0",
+  "description": "Kullanım Koşulları, Gizlilik Politikası ve Abonelik Şartları sayfalarını deterministik doğrulama ile analiz eden Chrome MV3 uzantısı.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting",
+    "sidePanel",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "options_page": "options.html",
+  "action": {
+    "default_title": "ToS Risk Analiz Panelini Aç"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+Dropbox Terms of Service and Privacy Policy Excerpt
+
+1. Your Stuff and Permissions
+When you use our Services, you provide us with things like your files, content, messages, contacts, and so on ("Your Stuff"). Your Stuff is yours. These Terms don't give us any rights to Your Stuff except for the limited rights that enable us to offer the Services.
+
+2. Paid Accounts and Auto-Renewal
+If you purchase a Paid Account, we'll automatically bill you from the date you convert to a Paid Account and on each periodic renewal until cancellation. Your subscription will automatically renew at the end of each billing cycle unless you cancel at least 24 hours prior to the renewal date. Paid fees are non-refundable except where required by law.
+
+3. Data Sharing with Third-Party Partners
+To provide, analyze, and market our Services, we may share your personal data and usage telemetry with third-party advertisers, analytics providers, and marketing partners. In certain commercial arrangements, we may transfer or sell aggregated and device-level identifiers to data brokers for cross-context behavioral advertising.
+
+4. Account Suspension and Termination
+You're free to stop using our Services at any time. We reserve the right to suspend or terminate your access to the Services without prior notice if you don't comply with these Terms, or if you don't access our Services for 12 consecutive months on a free account, which may result in permanent deletion of Your Stuff.
+
+5. Disclaimers and Limitation of Liability
+WE TRY TO KEEP THE SERVICES UP AND RUNNING, BUG-FREE, AND SAFE, BUT YOU USE THEM AT YOUR OWN RISK. TO THE FULLEST EXTENT PERMITTED BY LAW, DROPBOX SHALL NOT BE LIABLE FOR ANY INDIRECT, SPECIAL, INCIDENTAL, PUNITIVE, EXEMPLARY, OR CONSEQUENTIAL DAMAGES, OR ANY LOSS OF USE, DATA, BUSINESS, OR PROFITS, REGARDLESS OF LEGAL THEORY.
+
+6. Mandatory Arbitration and Class Action Waiver
+You and Dropbox agree to resolve any claims relating to these Terms or the Services through final and binding arbitration, except as set forth under Exceptions to Agreement to Arbitrate below. You may only resolve disputes with us on an individual basis, and you waive your right to bring a claim as a plaintiff or a class member in a class, consolidated, or representative action.

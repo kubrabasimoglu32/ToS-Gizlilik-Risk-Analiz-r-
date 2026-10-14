@@ -1,0 +1,232 @@
+{
+  "evaluated_at": "2026-10-12T14:47:14.808Z",
+  "mode": "deterministic-recorded",
+  "user_verification_status": "PENDING_USER_CONFIRMATION",
+  "overall": {
+    "total_tp": 32,
+    "total_fp": 1,
+    "total_fn": 1,
+    "total_dropped_by_validator": 5,
+    "micro_precision": 0.97,
+    "micro_recall": 0.97,
+    "micro_f1": 0.97
+  },
+  "documents": [
+    {
+      "document_id": "01-spotify-terms",
+      "filename": "01-spotify-terms.txt",
+      "tp_count": 7,
+      "fp_count": 0,
+      "fn_count": 1,
+      "precision": 1,
+      "recall": 0.875,
+      "f1": 0.933,
+      "dropped_by_validator": 1,
+      "true_positives": [
+        {
+          "clause_id": "C2",
+          "category": "otomatik_yenileme_iptal"
+        },
+        {
+          "clause_id": "C2",
+          "category": "ucret_iade"
+        },
+        {
+          "clause_id": "C4",
+          "category": "icerik_lisansi"
+        },
+        {
+          "clause_id": "C5",
+          "category": "tek_tarafli_degisiklik"
+        },
+        {
+          "clause_id": "C6",
+          "category": "hesap_kapatma"
+        },
+        {
+          "clause_id": "C7",
+          "category": "sorumluluk_siniri"
+        },
+        {
+          "clause_id": "C8",
+          "category": "zorunlu_tahkim_dava_feragati"
+        }
+      ],
+      "false_negatives": [
+        {
+          "clause_id": "C3",
+          "category": "ucret_iade",
+          "human_note_tr": "Spotify abonelik ücretlerini zaman zaman değiştirebilir (önceden bildirimli olduğu için model kaçırabilir - FN adayı)."
+        }
+      ],
+      "false_positives": []
+    },
+    {
+      "document_id": "02-netflix-terms",
+      "filename": "02-netflix-terms.txt",
+      "tp_count": 6,
+      "fp_count": 0,
+      "fn_count": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "dropped_by_validator": 1,
+      "true_positives": [
+        {
+          "clause_id": "C1",
+          "category": "otomatik_yenileme_iptal"
+        },
+        {
+          "clause_id": "C2",
+          "category": "ucret_iade"
+        },
+        {
+          "clause_id": "C3",
+          "category": "tek_tarafli_degisiklik"
+        },
+        {
+          "clause_id": "C4",
+          "category": "hesap_kapatma"
+        },
+        {
+          "clause_id": "C5",
+          "category": "sorumluluk_siniri"
+        },
+        {
+          "clause_id": "C6",
+          "category": "zorunlu_tahkim_dava_feragati"
+        }
+      ],
+      "false_negatives": [],
+      "false_positives": []
+    },
+    {
+      "document_id": "03-dropbox-terms",
+      "filename": "03-dropbox-terms.txt",
+      "tp_count": 6,
+      "fp_count": 0,
+      "fn_count": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "dropped_by_validator": 1,
+      "true_positives": [
+        {
+          "clause_id": "C2",
+          "category": "otomatik_yenileme_iptal"
+        },
+        {
+          "clause_id": "C2",
+          "category": "ucret_iade"
+        },
+        {
+          "clause_id": "C3",
+          "category": "veri_paylasimi_satisi"
+        },
+        {
+          "clause_id": "C4",
+          "category": "hesap_kapatma"
+        },
+        {
+          "clause_id": "C5",
+          "category": "sorumluluk_siniri"
+        },
+        {
+          "clause_id": "C6",
+          "category": "zorunlu_tahkim_dava_feragati"
+        }
+      ],
+      "false_negatives": [],
+      "false_positives": []
+    },
+    {
+      "document_id": "04-instagram-terms",
+      "filename": "04-instagram-terms.txt",
+      "tp_count": 5,
+      "fp_count": 1,
+      "fn_count": 0,
+      "precision": 0.833,
+      "recall": 1,
+      "f1": 0.909,
+      "dropped_by_validator": 1,
+      "true_positives": [
+        {
+          "clause_id": "C1",
+          "category": "veri_paylasimi_satisi"
+        },
+        {
+          "clause_id": "C2",
+          "category": "icerik_lisansi"
+        },
+        {
+          "clause_id": "C3",
+          "category": "tek_tarafli_degisiklik"
+        },
+        {
+          "clause_id": "C4",
+          "category": "hesap_kapatma"
+        },
+        {
+          "clause_id": "C5",
+          "category": "sorumluluk_siniri"
+        }
+      ],
+      "false_negatives": [],
+      "false_positives": [
+        {
+          "clause_id": "C6",
+          "category": "zorunlu_tahkim_dava_feragati",
+          "quote": "Dispute Resolution and Binding Arbitration\nIf you are a consumer, the laws of the country in which you reside will apply to any claim, cause of action, or dispute you have against us.",
+          "explanation_tr": "Kullanıcının mahkemeye, Tüketici Hakem Heyetine başvurma ve toplu dava açma hakkından feragat etmesi ve zorunlu tahkime gitmesi şart koşuluyor."
+        }
+      ]
+    },
+    {
+      "document_id": "05-tr-eticaret-sozlesme",
+      "filename": "05-tr-eticaret-sozlesme.txt",
+      "tp_count": 8,
+      "fp_count": 0,
+      "fn_count": 0,
+      "precision": 1,
+      "recall": 1,
+      "f1": 1,
+      "dropped_by_validator": 1,
+      "true_positives": [
+        {
+          "clause_id": "C3",
+          "category": "otomatik_yenileme_iptal"
+        },
+        {
+          "clause_id": "C4",
+          "category": "tek_tarafli_degisiklik"
+        },
+        {
+          "clause_id": "C4",
+          "category": "ucret_iade"
+        },
+        {
+          "clause_id": "C5",
+          "category": "veri_paylasimi_satisi"
+        },
+        {
+          "clause_id": "C6",
+          "category": "icerik_lisansi"
+        },
+        {
+          "clause_id": "C7",
+          "category": "hesap_kapatma"
+        },
+        {
+          "clause_id": "C7",
+          "category": "sorumluluk_siniri"
+        },
+        {
+          "clause_id": "C8",
+          "category": "zorunlu_tahkim_dava_feragati"
+        }
+      ],
+      "false_negatives": [],
+      "false_positives": []
+    }
+  ]
+}

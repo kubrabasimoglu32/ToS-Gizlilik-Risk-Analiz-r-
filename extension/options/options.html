@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ToS Risk Analizörü - API Ayarları</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #cbd5e1;
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #15803d;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 24px;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+    }
+    .legal-banner {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e3a8a;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    h1 { margin-top: 0; font-size: 1.35rem; }
+    .form-group { margin-bottom: 16px; }
+    label { display: block; font-weight: 600; margin-bottom: 6px; font-size: 0.92rem; }
+    select, input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    .hint { font-size: 0.82rem; color: var(--muted); margin-top: 4px; }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: #f1f5f9;
+      border-radius: 8px;
+      margin-bottom: 18px;
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:hover { background: var(--primary-hover); }
+    #status-msg {
+      margin-top: 12px;
+      font-weight: 600;
+      color: var(--success);
+      min-height: 1.4em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="legal-banner" id="mandatory-legal-notice">
+      Bu uygulama hukuki tavsiye vermez. Yalnızca bilgilendirme amaçlıdır.
+    </div>
+
+    <h1>LLM Sağlayıcısı ve Güvenlik Ayarları</h1>
+
+    <form id="options-form">
+      <div class="form-group">
+        <label for="provider-select">LLM Sağlayıcısı</label>
+        <select id="provider-select">
+          <option value="gemini">Google Gemini</option>
+          <option value="openai">OpenAI</option>
+          <option value="anthropic">Anthropic Claude</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="model-input">Model Adı</label>
+        <input type="text" id="model-input" placeholder="gemini-2.5-flash / gpt-4o-mini / claude-3-5-haiku-latest" />
+        <div class="hint">Seçilen sağlayıcıya uygun model kimliği (örn. gemini-2.5-flash).</div>
+      </div>
+
+      <div class="form-group">
+        <label for="api-key-input">Kişisel API Anahtarı (chrome.storage.local)</label>
+        <input type="password" id="api-key-input" autocomplete="off" placeholder="API anahtarınızı buraya girin..." />
+        <div class="hint">
+          Güvenlik Garantisi: API anahtarınız yalnızca tarayıcınızın <code>chrome.storage.local</code> alanında tutulur. Koda, loglara veya üçüncü taraf sunuculara ASLA yazılmaz. Ayrıca <code>page-agent</code> için de demo LLM kullanılmaz; yalnızca bu anahtar kullanılır.
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="mock-mode-checkbox" />
+        <label for="mock-mode-checkbox" style="margin:0;">
+          Tekrarlanabilir Demo / Kayıtlı Yanıt (Mock) Modu (Cypress E2E ve çevrimdışı doğrulama için)
+        </label>
+      </div>
+
+      <button type="submit" id="save-btn">Ayarları Kaydet</button>
+      <div id="status-msg" role="status"></div>
+    </form>
+  </div>
+  <script type="module" src="./options.ts"></script>
+</body>
+</html>

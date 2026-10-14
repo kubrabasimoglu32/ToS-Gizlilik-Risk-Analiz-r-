@@ -1,0 +1,34 @@
+{
+  "name": "tos-risk-analyzer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome MV3 extension & deterministic verification pipeline for Terms of Service / Privacy Policy risk analysis",
+  "type": "module",
+  "scripts": {
+    "build": "vite build && npm run build:scripts",
+    "build:scripts": "vite build --config vite.scripts.config.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "eval": "tsx eval/run-eval.ts",
+    "cy:run": "tsx scripts/run-e2e.ts",
+    "cy:open": "cypress open",
+    "serve:fixtures": "vite --config vite.fixtures.config.ts --port 4173"
+  },
+  "dependencies": {
+    "@page-agent/core": "^1.12.4",
+    "@page-agent/page-controller": "^1.12.4",
+    "page-agent": "^1.12.4",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@ffprobe-installer/ffprobe": "^2.1.2",
+    "@types/chrome": "^0.0.313",
+    "@types/node": "^22.13.10",
+    "cypress": "^14.2.0",
+    "jsdom": "^26.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2",
+    "vite": "^6.2.2",
+    "vitest": "^3.0.9"
+  }
+}
